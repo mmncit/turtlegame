@@ -96,6 +96,13 @@ function updateGameState() {
         spaceship.state = "alive";
         textOverlay.counter = -1;
     }
+    
+    if (game.state === 'won' && keyboard[32]) {
+		game.state = 'start';
+		spaceship.state = 'alive';
+		textOverlay.counter = -1;
+	}
+    
     if (textOverlay.counter >= 0) {
         textOverlay.counter++;
     }
